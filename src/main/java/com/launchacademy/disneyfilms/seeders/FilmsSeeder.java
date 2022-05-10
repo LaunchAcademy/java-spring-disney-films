@@ -18,7 +18,6 @@ public class FilmsSeeder {
 
   public void seed() {
     List<Film> filmsList = new ArrayList();
-    List<Character> characterList = new ArrayList();
 
     Film filmOne = new Film();
     filmOne.setTitle("Moana");
@@ -51,8 +50,8 @@ public class FilmsSeeder {
     filmsList.add(filmSix);
 
     if (filmService.count() == 0) {
-      for (Film name : filmsList) {
-        filmService.save(name);
+      for (Film film : filmsList) {
+        filmService.save(film);
       }
     }
   }

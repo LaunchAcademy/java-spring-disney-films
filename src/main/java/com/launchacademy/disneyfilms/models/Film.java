@@ -2,6 +2,7 @@ package com.launchacademy.disneyfilms.models;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import java.util.List;
+import java.util.Set;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -33,5 +34,9 @@ public class Film {
 
   @Column(name="type")
   private String type;
+
+  @OneToMany(mappedBy = "film")
+  @JsonIgnoreProperties("film")
+  private List<Character> characters;
 
 }
